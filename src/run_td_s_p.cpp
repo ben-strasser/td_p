@@ -84,8 +84,8 @@ int main(int argc, char*argv[]){
 		cout << "Ready" << endl;
 		
 		for(;;){
-			unsigned source_node, source_time, target_node;
-			cin >> source_node >> source_time >> target_node;
+			unsigned source_node, target_node;
+			cin >> source_node >> target_node;
 
 			if(source_node > node_count){
 				cout << "source node invalid" << endl;
@@ -95,12 +95,8 @@ int main(int argc, char*argv[]){
 				cout << "target node invalid" << endl;
 				continue;
 			}
-			if(source_time > period){
-				cout << "source time invalid" << endl;
-				continue;
-			}
 
-			long long t = -get_micro_time();
+			long long td_s_p_timer = -get_micro_time();
 			for(auto&p:allowed_path_list)
 				for(auto a:p)
 					is_arc_allowed[a] = false;
@@ -116,13 +112,12 @@ int main(int argc, char*argv[]){
 				if(target_time[i] == inf_weight)
 					break;
 			}
-			t += get_micro_time();
+			td_s_p_timer += get_micro_time();
 
 			cout 
 				<< "source node : " << source_node << '\n'
-				<< "source time [ms since midnight] : " << source_time << '\n'
 				<< "target node : " << target_node << '\n'
-				<< "query running time [musec] : " << t << '\n';
+				<< "TD-S+P query running time [musec] : " << td_s_p_timer << '\n';
 			if(target_time[0] == inf_weight){
 				cout << "No path" << endl;
 			} else {

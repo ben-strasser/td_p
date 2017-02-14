@@ -123,7 +123,7 @@ int main(int argc, char*argv[]){
 				<< "source time [ms since midnight] : " << source_time << '\n'
 				<< "target node : " << target_node << '\n'
 				<< "Dijkstra running time [musec] : " << baseline_timer << '\n'
-				<< "TD+S query running time [musec] : " << td_s_timer  << '\n';
+				<< "TD-S query running time [musec] : " << td_s_timer  << '\n';
 			if(exact_target_time == inf_weight){
 				cout << "No path" << endl;
 			} else {
@@ -135,9 +135,9 @@ int main(int argc, char*argv[]){
 					cout << ' ' << a;
 				cout << endl;
 				cout 
-					<< "TD+S target time [ms since midnight] : " << td_s_target_time << '\n'
-					<< "TD+S travel time [ms since midnight] : " << (td_s_target_time-source_time) << '\n'
-					<< "TD+S arc path :";
+					<< "TD-S target time [ms since midnight] : " << td_s_target_time << '\n'
+					<< "TD-S travel time [ms since midnight] : " << (td_s_target_time-source_time) << '\n'
+					<< "TD-S arc path :";
 				for(auto a:td_s_path)
 					cout << ' ' << a;
 				cout << endl;
