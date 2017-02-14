@@ -110,7 +110,7 @@ To run TD-S use the `run_td_s` command. The Freeflow heuristic is a special case
 
 ## Running Freeflow
 
-To run Freeflowexecute
+To run Freeflow execute
 
 ```bash
 run_td_s input/{first_out,head,first_ipp_of_arc,ipp_departure_time,ipp_travel_time} freeflow_ch
@@ -140,11 +140,15 @@ To run TD-S+P use the `run_td_s_p` command.
 
 ## Running Freeflow
 
+Execute the following command in a terminal:
+
 ```bash
 run_td_s_p input/{first_out,head,first_ipp_of_arc,ipp_departure_time,ipp_travel_time} freeflow_ch
 ```
 
 ## Running TD-S+4
+
+Execute the following command in a terminal:
 
 ```bash
 run_td_s_p input/{first_out,head,first_ipp_of_arc,ipp_departure_time,ipp_travel_time} ch4/*
@@ -152,9 +156,28 @@ run_td_s_p input/{first_out,head,first_ipp_of_arc,ipp_departure_time,ipp_travel_
 
 ## Running TD-S+9
 
+Execute the following command in a terminal:
+
 ```bash
 run_td_s_p input/{first_out,head,first_ipp_of_arc,ipp_departure_time,ipp_travel_time} ch9/*
 ```
 
 # Running TD-S+D
 
+To run TD-S+D use the `run_td_s_d` executable. It generates a new random realtime congestion for every query. The performance statistics of the Predicted-Path heuristic are also outputed by the executable. `run_td_s_d` promts for the source node, the source time, and the target node. The details of the congestion generation are hard-coded. To modify them, you need to modify the source code.
+
+## Running TD-S+D4
+
+Execute the following command in a terminal:
+
+```bash
+run_td_s_d input/{first_out,head,first_ipp_of_arc,ipp_departure_time,ipp_travel_time} cch_order ch4/*
+```
+
+## Running TD-S+D9
+
+Execute the following command in a terminal:
+
+```bash
+run_td_s_d input/{first_out,head,first_ipp_of_arc,ipp_departure_time,ipp_travel_time} cch_order ch4/*
+```
